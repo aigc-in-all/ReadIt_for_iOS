@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  WillViewController.swift
 //  ReadIt
 //
 //  Created by 何清宝 on 17/3/26.
@@ -8,11 +8,14 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class WillViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        self.title = "想读"
+        self.view.backgroundColor = UIColor.white
+
+        // Do any additional setup after loading the view.
     }
 
     override func didReceiveMemoryWarning() {
@@ -20,6 +23,4 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
-
 }
-
