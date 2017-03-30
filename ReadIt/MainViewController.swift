@@ -14,7 +14,7 @@ class MainViewController: UITabBarController {
         super.viewDidLoad()
         
         // 在读
-        let readingNavController = UINavigationController(rootViewController: ReadingViewController())
+        let readingNavController = UINavigationController(rootViewController: ReadingBookViewController())
         readingNavController.title = "在读"
         readingNavController.tabBarItem.image = UIImage(named: "main_tab_icon_reading")
         

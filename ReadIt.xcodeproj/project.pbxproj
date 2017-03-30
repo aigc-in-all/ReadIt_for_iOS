@@ -9,28 +9,36 @@
 /* Begin PBXBuildFile section */
 		3140B84CE42496161199DF78 /* Pods_ReadIt.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5D881D18D80A107A059EEB3 /* Pods_ReadIt.framework */; };
 		5119828D1E87F944008F422A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5119828C1E87F944008F422A /* AppDelegate.swift */; };
-		5119828F1E87F944008F422A /* ReadingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5119828E1E87F944008F422A /* ReadingViewController.swift */; };
+		5119828F1E87F944008F422A /* ReadingBookViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5119828E1E87F944008F422A /* ReadingBookViewController.swift */; };
 		511982941E87F944008F422A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 511982931E87F944008F422A /* Assets.xcassets */; };
 		511982971E87F944008F422A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 511982951E87F944008F422A /* LaunchScreen.storyboard */; };
 		5119829F1E87FAE5008F422A /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5119829E1E87FAE5008F422A /* MainViewController.swift */; };
 		511982A11E87FC73008F422A /* ReadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 511982A01E87FC73008F422A /* ReadViewController.swift */; };
 		511982A31E87FC91008F422A /* WillViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 511982A21E87FC91008F422A /* WillViewController.swift */; };
-		511982A51E88079B008F422A /* TestTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 511982A41E88079B008F422A /* TestTableViewController.swift */; };
 		511982A71E881AF4008F422A /* Book.swift in Sources */ = {isa = PBXBuildFile; fileRef = 511982A61E881AF4008F422A /* Book.swift */; };
+		519E3AB71E8D1868003FEC7E /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 519E3AB61E8D1868003FEC7E /* DetailViewController.swift */; };
+		519E3ABF1E8D201B003FEC7E /* BookViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 519E3ABE1E8D201B003FEC7E /* BookViewCell.swift */; };
+		51F180531E8D227000626338 /* UIColorExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51F180521E8D227000626338 /* UIColorExtensions.swift */; };
+		51F180551E8D22E600626338 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51F180541E8D22E600626338 /* Constants.swift */; };
+		51F180581E8D2C1E00626338 /* AddBookViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51F180571E8D2C1E00626338 /* AddBookViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		511982891E87F944008F422A /* ReadIt.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ReadIt.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5119828C1E87F944008F422A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		5119828E1E87F944008F422A /* ReadingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadingViewController.swift; sourceTree = "<group>"; };
+		5119828E1E87F944008F422A /* ReadingBookViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadingBookViewController.swift; sourceTree = "<group>"; };
 		511982931E87F944008F422A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		511982961E87F944008F422A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		511982981E87F944008F422A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5119829E1E87FAE5008F422A /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		511982A01E87FC73008F422A /* ReadViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReadViewController.swift; sourceTree = "<group>"; };
 		511982A21E87FC91008F422A /* WillViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WillViewController.swift; sourceTree = "<group>"; };
-		511982A41E88079B008F422A /* TestTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestTableViewController.swift; sourceTree = "<group>"; };
 		511982A61E881AF4008F422A /* Book.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Book.swift; sourceTree = "<group>"; };
+		519E3AB61E8D1868003FEC7E /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		519E3ABE1E8D201B003FEC7E /* BookViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookViewCell.swift; sourceTree = "<group>"; };
+		51F180521E8D227000626338 /* UIColorExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColorExtensions.swift; sourceTree = "<group>"; };
+		51F180541E8D22E600626338 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		51F180571E8D2C1E00626338 /* AddBookViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddBookViewController.swift; sourceTree = "<group>"; };
 		9DF659D3E8222956651DC496 /* Pods-ReadIt.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReadIt.release.xcconfig"; path = "Pods/Target Support Files/Pods-ReadIt/Pods-ReadIt.release.xcconfig"; sourceTree = "<group>"; };
 		B5D881D18D80A107A059EEB3 /* Pods_ReadIt.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ReadIt.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DDB71B9271EC570E6B5F7D07 /* Pods-ReadIt.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReadIt.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ReadIt/Pods-ReadIt.debug.xcconfig"; sourceTree = "<group>"; };
@@ -78,18 +86,70 @@
 		5119828B1E87F944008F422A /* ReadIt */ = {
 			isa = PBXGroup;
 			children = (
-				5119828C1E87F944008F422A /* AppDelegate.swift */,
-				511982A41E88079B008F422A /* TestTableViewController.swift */,
-				5119829E1E87FAE5008F422A /* MainViewController.swift */,
-				5119828E1E87F944008F422A /* ReadingViewController.swift */,
-				511982A61E881AF4008F422A /* Book.swift */,
-				511982A21E87FC91008F422A /* WillViewController.swift */,
-				511982A01E87FC73008F422A /* ReadViewController.swift */,
+				51F180561E8D267900626338 /* network */,
+				519E3AC01E8D21D1003FEC7E /* common */,
+				519E3ABD1E8D1FCF003FEC7E /* model */,
+				519E3ABC1E8D1FB0003FEC7E /* app */,
+				519E3ABB1E8D1F98003FEC7E /* view */,
+				519E3ABA1E8D1F54003FEC7E /* controller */,
 				511982931E87F944008F422A /* Assets.xcassets */,
 				511982951E87F944008F422A /* LaunchScreen.storyboard */,
 				511982981E87F944008F422A /* Info.plist */,
 			);
 			path = ReadIt;
+			sourceTree = "<group>";
+		};
+		519E3ABA1E8D1F54003FEC7E /* controller */ = {
+			isa = PBXGroup;
+			children = (
+				5119829E1E87FAE5008F422A /* MainViewController.swift */,
+				5119828E1E87F944008F422A /* ReadingBookViewController.swift */,
+				511982A21E87FC91008F422A /* WillViewController.swift */,
+				511982A01E87FC73008F422A /* ReadViewController.swift */,
+				519E3AB61E8D1868003FEC7E /* DetailViewController.swift */,
+				51F180571E8D2C1E00626338 /* AddBookViewController.swift */,
+			);
+			name = controller;
+			sourceTree = "<group>";
+		};
+		519E3ABB1E8D1F98003FEC7E /* view */ = {
+			isa = PBXGroup;
+			children = (
+				519E3ABE1E8D201B003FEC7E /* BookViewCell.swift */,
+			);
+			name = view;
+			sourceTree = "<group>";
+		};
+		519E3ABC1E8D1FB0003FEC7E /* app */ = {
+			isa = PBXGroup;
+			children = (
+				5119828C1E87F944008F422A /* AppDelegate.swift */,
+			);
+			name = app;
+			sourceTree = "<group>";
+		};
+		519E3ABD1E8D1FCF003FEC7E /* model */ = {
+			isa = PBXGroup;
+			children = (
+				511982A61E881AF4008F422A /* Book.swift */,
+			);
+			name = model;
+			sourceTree = "<group>";
+		};
+		519E3AC01E8D21D1003FEC7E /* common */ = {
+			isa = PBXGroup;
+			children = (
+				51F180521E8D227000626338 /* UIColorExtensions.swift */,
+				51F180541E8D22E600626338 /* Constants.swift */,
+			);
+			name = common;
+			sourceTree = "<group>";
+		};
+		51F180561E8D267900626338 /* network */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = network;
 			sourceTree = "<group>";
 		};
 		82B276856D401AA2EB8F63D0 /* Frameworks */ = {
@@ -223,13 +283,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				51F180531E8D227000626338 /* UIColorExtensions.swift in Sources */,
 				5119829F1E87FAE5008F422A /* MainViewController.swift in Sources */,
-				5119828F1E87F944008F422A /* ReadingViewController.swift in Sources */,
+				5119828F1E87F944008F422A /* ReadingBookViewController.swift in Sources */,
+				51F180581E8D2C1E00626338 /* AddBookViewController.swift in Sources */,
 				511982A71E881AF4008F422A /* Book.swift in Sources */,
+				519E3ABF1E8D201B003FEC7E /* BookViewCell.swift in Sources */,
 				511982A11E87FC73008F422A /* ReadViewController.swift in Sources */,
 				5119828D1E87F944008F422A /* AppDelegate.swift in Sources */,
 				511982A31E87FC91008F422A /* WillViewController.swift in Sources */,
-				511982A51E88079B008F422A /* TestTableViewController.swift in Sources */,
+				51F180551E8D22E600626338 /* Constants.swift in Sources */,
+				519E3AB71E8D1868003FEC7E /* DetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -385,6 +449,7 @@
 				5119829D1E87F944008F422A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -1,18 +1,22 @@
 //
-//  ReadViewController.swift
+//  DetailViewController.swift
 //  ReadIt
 //
-//  Created by 何清宝 on 17/3/26.
+//  Created by heqingbao on 2017/3/30.
 //  Copyright © 2017年 heqingbao. All rights reserved.
 //
 
 import UIKit
 
-class ReadViewController: UIViewController {
+class DetailViewController: UIViewController {
+    
+    var book: Book?
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.title = "已读"
         self.view.backgroundColor = Constants.bgColor
+        
+        self.title = book?.title
     }
+
 }

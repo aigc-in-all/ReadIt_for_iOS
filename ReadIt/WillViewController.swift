@@ -13,7 +13,7 @@ class WillViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "想读"
-        self.view.backgroundColor = UIColor.white
+        self.view.backgroundColor = Constants.bgColor
 
         // Do any additional setup after loading the view.
     }
