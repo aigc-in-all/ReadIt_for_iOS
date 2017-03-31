@@ -13,26 +13,45 @@ class BookViewCell: UICollectionViewCell {
     var book: Book? {
         didSet {
             if let image = book?.image {
-                bookImageView.af_setImage(
-                    withURL: URL(string: image)!,
-                    placeholderImage: nil,
-                    filter: nil,
-                    imageTransition: .crossDissolve(0.2)
-                )
+//                bookImageView.af_setImage(
+//                    withURL: URL(string: image)!,
+//                    placeholderImage: nil,
+//                    filter: nil,
+//                    imageTransition: .crossDissolve(0.2)
+//                )
+            }
+            
+            if let title = book?.title {
+                bookTitleLabel.text = title
             }
         }
     }
     
     let bookImageView: UIImageView = {
         let imageView = UIImageView()
+        imageView.layer.cornerRadius = 6
+        imageView.layer.masksToBounds = true
+        imageView.image = UIImage(named: "test")
         imageView.translatesAutoresizingMaskIntoConstraints = false
         return imageView
     }()
     
-    let bookNameLabel: UILabel = {
+    let bottomBarView: UILabel = {
+        let label = UILabel()
+        label.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.5)
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.text = "23/879"
+        label.font = UIFont.boldSystemFont(ofSize: 12)
+        label.textColor = .white
+        label.textAlignment = .center
+        return label
+    }()
+    
+    let bookTitleLabel: UILabel = {
         let label = UILabel()
         label.text = "百年孤独"
-        label.font = UIFont.boldSystemFont(ofSize: 14)
+        label.font = UIFont.boldSystemFont(ofSize: 12)
+        label.textAlignment = .center
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
@@ -64,15 +83,27 @@ class BookViewCell: UICollectionViewCell {
     }
     
     private func setupViews() {
-        self.backgroundColor = UIColor.rgb(red: 138, green: 138, blue: 138)
-        self.layer.cornerRadius = 6
-        self.layer.masksToBounds = true
         
         addSubview(bookImageView)
+        bookImageView.addSubview(bottomBarView)
         
-        bookImageView.widthAnchor.constraint(equalTo: self.widthAnchor).isActive = true
-        bookImageView.heightAnchor.constraint(equalTo: self.heightAnchor).isActive = true
-        bookImageView.centerXAnchor.constraint(equalTo: self.centerXAnchor).isActive = true
-        bookImageView.centerYAnchor.constraint(equalTo: self.centerYAnchor).isActive = true
+        addSubview(bookTitleLabel)
+        
+        bookImageView.leftAnchor.constraint(equalTo: self.leftAnchor).isActive = true
+        bookImageView.topAnchor.constraint(equalTo: self.topAnchor).isActive = true
+        bookImageView.rightAnchor.constraint(equalTo: self.rightAnchor).isActive = true
+        bookImageView.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -20).isActive = true
+        
+        bottomBarView.leftAnchor.constraint(equalTo: bookImageView.leftAnchor).isActive = true
+        bottomBarView.topAnchor.constraint(equalTo: bookImageView.bottomAnchor, constant: -20).isActive = true
+        bottomBarView.rightAnchor.constraint(equalTo: bookImageView.rightAnchor).isActive = true
+        bottomBarView.bottomAnchor.constraint(equalTo: bookImageView.bottomAnchor).isActive = true
+        
+        bookTitleLabel.leftAnchor.constraint(equalTo: self.leftAnchor).isActive = true
+        bookTitleLabel.topAnchor.constraint(equalTo: bookImageView.bottomAnchor).isActive = true
+        bookTitleLabel.rightAnchor.constraint(equalTo: self.rightAnchor).isActive = true
+        bookTitleLabel.bottomAnchor.constraint(equalTo: self.bottomAnchor).isActive = true
+        
+
     }
 }

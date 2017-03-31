@@ -28,7 +28,7 @@ class ReadingBookViewController: UIViewController, UICollectionViewDataSource, U
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.add, target: self, action: #selector(onAddButtonClicked))
         
         bookCellWidth = (self.view.bounds.width - 12 - 12 - 12 - 12) / 3
-        bookCellHeight = bookCellWidth / 0.669
+        bookCellHeight = bookCellWidth / 0.669 + 20 // 20 表示底部显示标题的高度
         
         let collectionViewLayout = UICollectionViewFlowLayout()
         let collectionView = UICollectionView(frame: self.view.bounds, collectionViewLayout: collectionViewLayout)
@@ -43,60 +43,49 @@ class ReadingBookViewController: UIViewController, UICollectionViewDataSource, U
         self.view.addSubview(collectionView)
         
         // test data
-        let book1 = Book(isbn: "9787544253994", title: "百年孤独", pages: 400)
+        let book1 = Book()
+        book1.isbn = "9787544253994"
+        book1.title = "百年孤独"
+        book1.pages = 400
         book1.image = "https://img3.doubanio.com/mpic/s6384944.jpg"
         
-        let book2 = Book(isbn: "9787208061644", title: "追风筝的人", pages: 400)
-        book2.image = "https://img3.doubanio.com/mpic/s1727290.jpg"
-        
-        let book3 = Book(isbn: "9787508672069", title: "未来简史", pages: 400)
-        book3.image = "https://img3.doubanio.com/mpic/s29287103.jpg"
-        
-        let book4 = Book(isbn: "9787544270878", title: "解忧杂货店", pages: 400)
-        book4.image = "https://img3.doubanio.com/mpic/s27264181.jpg"
-        
-        let book5 = Book(isbn: "9787514357042", title: "风雪追击", pages: 400)
-        book5.image = "https://img1.doubanio.com/mpic/s29362779.jpg"
-        
-        let book6 = Book(isbn: "9787539971810", title: "岛上书店", pages: 400)
-        book6.image = "https://img3.doubanio.com/mpic/s28049685.jpg"
-        
-        let book7 = Book(isbn: "9787550013247", title: "摆渡人", pages: 400)
-        book7.image = "https://img3.doubanio.com/mpic/s28063701.jpg"
+//        let book2 = Book(isbn: "9787208061644", title: "追风筝的人", pages: 400)
+//        book2.image = "https://img3.doubanio.com/mpic/s1727290.jpg"
+//        
+//        let book3 = Book(isbn: "9787508672069", title: "未来简史", pages: 400)
+//        book3.image = "https://img3.doubanio.com/mpic/s29287103.jpg"
+//        
+//        let book4 = Book(isbn: "9787544270878", title: "解忧杂货店", pages: 400)
+//        book4.image = "https://img3.doubanio.com/mpic/s27264181.jpg"
+//        
+//        let book5 = Book(isbn: "9787514357042", title: "风雪追击", pages: 400)
+//        book5.image = "https://img1.doubanio.com/mpic/s29362779.jpg"
+//        
+//        let book6 = Book(isbn: "9787539971810", title: "岛上书店", pages: 400)
+//        book6.image = "https://img3.doubanio.com/mpic/s28049685.jpg"
+//        
+//        let book7 = Book(isbn: "9787550013247", title: "摆渡人", pages: 400)
+//        book7.image = "https://img3.doubanio.com/mpic/s28063701.jpg"
         
         books.append(book1)
-        books.append(book2)
-        books.append(book3)
-        books.append(book4)
-        books.append(book5)
-        books.append(book6)
-        books.append(book7)
+//        books.append(book2)
+//        books.append(book3)
+//        books.append(book4)
+//        books.append(book5)
+//        books.append(book6)
+//        books.append(book7)
         
-        for _ in 1...9 {
-            let book = Book(isbn: "9787550013247", title: "摆渡人", pages: 400)
-            book.image = "https://img3.doubanio.com/mpic/s28063701.jpg"
-            books.append(book)
-        }
+//        for _ in 1...9 {
+//            let book = Book(isbn: "9787550013247", title: "摆渡人", pages: 400)
+//            book.image = "https://img3.doubanio.com/mpic/s28063701.jpg"
+//            books.append(book)
+//        }
         
-        HttpManager.sharedInstance.getRequest(urlString: "https://api.douban.com/v2/book/isbn/:9787550013247", params: nil, success: { (response) in
-            let json = JSON(response)
-            print(json)
-        }) { (error) in
-            //
-        }
-        
-//        for book in books {
-//            let url = "https://api.douban.com/v2/book/isbn/:" + book.isbn
-//            Alamofire.request(url).responseJSON(completionHandler: { (response) in
-//                switch response.result {
-//                case .success(let value):
-//                    let json = JSON(value)
-//                    book.image = json["image"].string
-//                    collectionView.reloadData()
-//                case .failure(let error):
-//                    print(error)
-//                }
-//            })
+//        HttpManager.sharedInstance.getRequest(urlString: "https://api.douban.com/v2/book/isbn/:9787550013247", params: nil, success: { (response) in
+//            let json = JSON(response)
+//            print(json)
+//        }) { (error) in
+//            //
 //        }
     }
     
