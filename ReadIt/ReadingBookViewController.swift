@@ -8,7 +8,6 @@
 
 import UIKit
 
-import Alamofire
 import AlamofireImage
 import SwiftyJSON
 
@@ -77,6 +76,13 @@ class ReadingBookViewController: UIViewController, UICollectionViewDataSource, U
             let book = Book(isbn: "9787550013247", title: "摆渡人", pages: 400)
             book.image = "https://img3.doubanio.com/mpic/s28063701.jpg"
             books.append(book)
+        }
+        
+        HttpManager.sharedInstance.getRequest(urlString: "https://api.douban.com/v2/book/isbn/:9787550013247", params: nil, success: { (response) in
+            let json = JSON(response)
+            print(json)
+        }) { (error) in
+            //
         }
         
 //        for book in books {
