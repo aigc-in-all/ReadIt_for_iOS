@@ -13,12 +13,12 @@ class BookViewCell: UICollectionViewCell {
     var book: Book? {
         didSet {
             if let image = book?.image {
-//                bookImageView.af_setImage(
-//                    withURL: URL(string: image)!,
-//                    placeholderImage: nil,
-//                    filter: nil,
-//                    imageTransition: .crossDissolve(0.2)
-//                )
+                bookImageView.af_setImage(
+                    withURL: URL(string: image)!,
+                    placeholderImage: nil,
+                    filter: nil,
+                    imageTransition: .crossDissolve(0.2)
+                )
             }
             
             if let title = book?.title {

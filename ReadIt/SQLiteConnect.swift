@@ -28,7 +28,10 @@ class SQLiteConnect {
     }
     
     @discardableResult func createTable(tableName: String, columnsInfo: [String]) -> Bool {
-        let sql = "CREATE TABLE IF NOT EXISTS \(tableName) (\(columnsInfo.joined(separator: ",")))"
+        let sql = "CREATE TABLE IF NOT EXISTS \(tableName) (\(columnsInfo.joined(separator: ", ")))"
+        
+        print("\(sql)")
+        
         if sqlite3_exec(self.db, sql.cString(using: .utf8), nil, nil, nil) == SQLITE_OK {
             return true
         }
@@ -39,9 +42,9 @@ class SQLiteConnect {
     @discardableResult func insert(tableName: String, rowInfo: [String: String]) -> Bool {
         var statement: OpaquePointer?
         let sql = "INSERT INTO \(tableName) "
-            + "(\(rowInfo.keys.joined(separator: ","))) "
+            + "(\(rowInfo.keys.joined(separator: ", "))) "
             + "VALUES"
-            + "(\(rowInfo.values.joined(separator: ",")))"
+            + "(\(rowInfo.values.joined(separator: ", ")))"
         print("\(sql)")
         if sqlite3_prepare_v2(self.db, sql.cString(using: .utf8), -1, &statement, nil) == SQLITE_OK {
             if sqlite3_step(statement) == SQLITE_DONE {
@@ -65,6 +68,8 @@ class SQLiteConnect {
         if let orderBy = order {
             sql += " ORDER BY \(orderBy)"
         }
+        
+        print("\(sql)")
         
         sqlite3_prepare_v2(self.db, sql.cString(using: .utf8), -1, &statement, nil)
         

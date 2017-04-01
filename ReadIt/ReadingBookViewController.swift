@@ -17,6 +17,7 @@ class ReadingBookViewController: UIViewController, UICollectionViewDataSource, U
     
     var books = [Book]()
     
+    var collectionView: UICollectionView?
     var bookCellWidth: CGFloat = 0
     var bookCellHeight: CGFloat = 0
 
@@ -31,22 +32,22 @@ class ReadingBookViewController: UIViewController, UICollectionViewDataSource, U
         bookCellHeight = bookCellWidth / 0.669 + 20 // 20 表示底部显示标题的高度
         
         let collectionViewLayout = UICollectionViewFlowLayout()
-        let collectionView = UICollectionView(frame: self.view.bounds, collectionViewLayout: collectionViewLayout)
-        collectionView.dataSource = self
-        collectionView.delegate = self
-        collectionView.contentInset = UIEdgeInsets(top: 12, left: 12, bottom: 12, right: 12)
-        collectionView.backgroundColor = UIColor.init(white: 0.95, alpha: 1)
-        collectionView.alwaysBounceVertical = true
+        collectionView = UICollectionView(frame: self.view.bounds, collectionViewLayout: collectionViewLayout)
+        collectionView?.dataSource = self
+        collectionView?.delegate = self
+        collectionView?.contentInset = UIEdgeInsets(top: 12, left: 12, bottom: 12, right: 12)
+        collectionView?.backgroundColor = UIColor.init(white: 0.95, alpha: 1)
+        collectionView?.alwaysBounceVertical = true
         
-        collectionView.register(BookViewCell.self, forCellWithReuseIdentifier: cellId)
+        collectionView?.register(BookViewCell.self, forCellWithReuseIdentifier: cellId)
         
-        self.view.addSubview(collectionView)
+        self.view.addSubview(collectionView!)
         
         // test data
         let book1 = Book()
         book1.isbn = "9787544253994"
         book1.title = "百年孤独"
-        book1.pages = 400
+        book1.pages = "400"
         book1.image = "https://img3.doubanio.com/mpic/s6384944.jpg"
         
 //        let book2 = Book(isbn: "9787208061644", title: "追风筝的人", pages: 400)
@@ -87,7 +88,18 @@ class ReadingBookViewController: UIViewController, UICollectionViewDataSource, U
 //        }) { (error) in
 //            //
 //        }
+        
+        books.append(contentsOf: DBManager.sharedInstance.queryAll())
     }
+    
+//    override func viewDidAppear(_ animated: Bool) {
+//        super.viewDidAppear(animated)
+//        
+//        let array = ["one", "two"]
+//        let t = array.joined(separator: "|")
+//        print("\(t)")
+//        print("\(t.components(separatedBy: "|"))")
+//    }
     
     // MARK: - UICollectionViewDataSource
     
@@ -119,6 +131,11 @@ class ReadingBookViewController: UIViewController, UICollectionViewDataSource, U
     
     func onAddButtonClicked() {
         let addBookViewController = AddBookViewController()
+        addBookViewController.callback = { book in
+            self.books.append(book)
+            let indexPath = IndexPath(item: self.books.count - 1, section: 0)
+            self.collectionView?.insertItems(at: [indexPath])
+        }
         let navController = UINavigationController(rootViewController: addBookViewController)
         present(navController, animated: true, completion: nil)
     }
