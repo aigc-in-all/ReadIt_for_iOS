@@ -94,7 +94,7 @@ class DBManager {
                                 "image": "'\(book.image!)'",
                                 "publisher": "'\(book.publisher!)'",
 //                                "authorIntro": "'\(book.authorIntro!)'",
-                                "summary": "'summary'",
+                                "summary": "'\(book.summary!)'",
                                 "createdTime": "'\(book.createdTime!)'"
                                 ]
                             )

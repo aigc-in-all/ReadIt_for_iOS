@@ -8,52 +8,52 @@
 
 import UIKit
 
-class WillViewController: UIViewController {
+class WillViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     
-    var db: SQLiteConnect?
+    let cellIdForContent = "content"
+    let cellIdForPlaceholder = "placeholder"
+    
+    var bookCellWidth: CGFloat = 0
+    var bookCellHeight: CGFloat = 0
 
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "想读"
         self.view.backgroundColor = Constants.bgColor
         
-//        let urls = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
-//        let sqlitePath = urls[urls.count - 1].absoluteString + "sqlite3.db"
-//        
-//        // file:///Users/heqingbao/Library/Developer/CoreSimulator/Devices/8724985C-0295-4FE9-809D-E9797454E2DE/data/Containers/Data/Application/CA080F82-EAF5-4805-AC4E-CB78865CA479/Documents/sqlite3.db
-//        print(sqlitePath)
-//        
-//        db = SQLiteConnect(path: sqlitePath)
-//        
-//        if let mydb = db {
-//            mydb.createTable(tableName: "students", columnsInfo: [
-//                "id integer primary key autoincrement",
-//                "name text",
-//                "height double"])
-            
-            // insert
-//            mydb.insert(tableName: "students", rowInfo: ["name": "'大强'", "height": "178"])
-
-            // select
-//            let statement = mydb.fetch(tableName: "books", cond: "1 == 1", order: nil)
-//            while sqlite3_step(statement) == SQLITE_ROW {
-//                let isbn = sqlite3_column_text(statement, 1)
-//                let title = String(cString: sqlite3_column_text(statement, 2))
-//                let image = sqlite3_column_text(statement, 3)
-//                print("\(isbn). \(title) \(image)")
-//            }
-//            sqlite3_finalize(statement)
-
-            
-            
-            // update
-//            mydb.update(tableName: "students", cond: "id = 1", rowInfo: ["name": "'小强'", "height": "172"])
-//            
-//            // delete
-//            mydb.delete(tableName: "students", cond: "id = 1")
-//        }
-        let books = DBManager.sharedInstance.queryAll()
-        print(books)
+        bookCellWidth = (self.view.bounds.width - 12 - 12 - 12 - 12) / 3
+        bookCellHeight = bookCellWidth / 0.669 + 20 // 20 表示底部显示标题的高度
+        
+        let layout = UICollectionViewFlowLayout()
+        let collectionView = UICollectionView(frame: self.view.bounds, collectionViewLayout: layout)
+        collectionView.dataSource = self
+        collectionView.delegate = self
+        collectionView.alwaysBounceVertical = true
+        collectionView.contentInset = UIEdgeInsets(top: 12, left: 12, bottom: 12, right: 12)
+        collectionView.backgroundColor = Constants.bgColor
+        collectionView.register(BookViewCell.self, forCellWithReuseIdentifier: cellIdForContent)
+        collectionView.register(EmptyCell.self, forCellWithReuseIdentifier: cellIdForPlaceholder)
+        
+        self.view.addSubview(collectionView)
+    }
+    
+    // MARK: - UICollectionViewDataSource
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return 1
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellIdForPlaceholder, for: indexPath) as! EmptyCell
+        cell.emptyText = "最近一本书都不想读吗？亲，阅读贵在坚持，如果你改变了主意，请点击右下角的按钮添加书籍。"
+        return cell
+    }
+    
+    // MARK: - UICollectionViewDelegateFlowLayout
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        //        return CGSize(width: bookCellWidth, height: bookCellHeight)
+        return CGSize(width: self.view.bounds.width, height: bookCellHeight)
     }
 
 }

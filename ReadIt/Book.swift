@@ -8,6 +8,14 @@
 
 import ObjectMapper
 
+/*
+ 9787208061644
+ 9787508672069
+ 9787544270878
+ 9787514357042
+ 9787539971810
+ 9787550013247
+ */
 // https://api.douban.com/v2/book/isbn/:9787201094014
 class Book: Mappable {
     

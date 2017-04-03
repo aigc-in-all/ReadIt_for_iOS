@@ -17,15 +17,19 @@
 		511982A31E87FC91008F422A /* WillViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 511982A21E87FC91008F422A /* WillViewController.swift */; };
 		511982A71E881AF4008F422A /* Book.swift in Sources */ = {isa = PBXBuildFile; fileRef = 511982A61E881AF4008F422A /* Book.swift */; };
 		51389ADC1E8E560F00294FE7 /* HttpManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51389ADB1E8E560F00294FE7 /* HttpManager.swift */; };
-		51389AE21E8E6A6800294FE7 /* ReadingBookCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51389AE11E8E6A6800294FE7 /* ReadingBookCell.swift */; };
 		51389AE51E8E87C900294FE7 /* DBManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51389AE41E8E87C900294FE7 /* DBManager.swift */; };
 		5174E00F1E8DFECC000E80F5 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 5174E00E1E8DFECC000E80F5 /* libsqlite3.tbd */; };
 		5174E0111E8DFFAC000E80F5 /* SQLiteConnect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5174E0101E8DFFAC000E80F5 /* SQLiteConnect.swift */; };
+		51932E231E9155DA00067553 /* MoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51932E221E9155DA00067553 /* MoreViewController.swift */; };
+		51932E271E921ACC00067553 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51932E261E921ACC00067553 /* AboutViewController.swift */; };
+		51932E291E92509B00067553 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51932E281E92509B00067553 /* SettingsViewController.swift */; };
+		51932E2B1E92515100067553 /* BackupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51932E2A1E92515100067553 /* BackupViewController.swift */; };
 		519E3AB71E8D1868003FEC7E /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 519E3AB61E8D1868003FEC7E /* DetailViewController.swift */; };
 		519E3ABF1E8D201B003FEC7E /* BookViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 519E3ABE1E8D201B003FEC7E /* BookViewCell.swift */; };
 		51F180531E8D227000626338 /* UIColorExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51F180521E8D227000626338 /* UIColorExtensions.swift */; };
 		51F180551E8D22E600626338 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51F180541E8D22E600626338 /* Constants.swift */; };
 		51F180581E8D2C1E00626338 /* AddBookViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51F180571E8D2C1E00626338 /* AddBookViewController.swift */; };
+		51F52E251E913ECC009D4318 /* EmptyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51F52E241E913ECC009D4318 /* EmptyCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,16 +44,20 @@
 		511982A21E87FC91008F422A /* WillViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WillViewController.swift; sourceTree = "<group>"; };
 		511982A61E881AF4008F422A /* Book.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Book.swift; sourceTree = "<group>"; };
 		51389ADB1E8E560F00294FE7 /* HttpManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HttpManager.swift; sourceTree = "<group>"; };
-		51389AE11E8E6A6800294FE7 /* ReadingBookCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReadingBookCell.swift; sourceTree = "<group>"; };
 		51389AE41E8E87C900294FE7 /* DBManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DBManager.swift; sourceTree = "<group>"; };
 		5174E00D1E8DFEB2000E80F5 /* ReadIt-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ReadIt-Bridging-Header.h"; sourceTree = "<group>"; };
 		5174E00E1E8DFECC000E80F5 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
 		5174E0101E8DFFAC000E80F5 /* SQLiteConnect.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SQLiteConnect.swift; sourceTree = "<group>"; };
+		51932E221E9155DA00067553 /* MoreViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoreViewController.swift; sourceTree = "<group>"; };
+		51932E261E921ACC00067553 /* AboutViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
+		51932E281E92509B00067553 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		51932E2A1E92515100067553 /* BackupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BackupViewController.swift; sourceTree = "<group>"; };
 		519E3AB61E8D1868003FEC7E /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		519E3ABE1E8D201B003FEC7E /* BookViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookViewCell.swift; sourceTree = "<group>"; };
 		51F180521E8D227000626338 /* UIColorExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColorExtensions.swift; sourceTree = "<group>"; };
 		51F180541E8D22E600626338 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		51F180571E8D2C1E00626338 /* AddBookViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddBookViewController.swift; sourceTree = "<group>"; };
+		51F52E241E913ECC009D4318 /* EmptyCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmptyCell.swift; sourceTree = "<group>"; };
 		9DF659D3E8222956651DC496 /* Pods-ReadIt.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReadIt.release.xcconfig"; path = "Pods/Target Support Files/Pods-ReadIt/Pods-ReadIt.release.xcconfig"; sourceTree = "<group>"; };
 		B5D881D18D80A107A059EEB3 /* Pods_ReadIt.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ReadIt.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DDB71B9271EC570E6B5F7D07 /* Pods-ReadIt.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReadIt.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ReadIt/Pods-ReadIt.debug.xcconfig"; sourceTree = "<group>"; };
@@ -131,6 +139,10 @@
 				511982A01E87FC73008F422A /* ReadViewController.swift */,
 				519E3AB61E8D1868003FEC7E /* DetailViewController.swift */,
 				51F180571E8D2C1E00626338 /* AddBookViewController.swift */,
+				51932E221E9155DA00067553 /* MoreViewController.swift */,
+				51932E261E921ACC00067553 /* AboutViewController.swift */,
+				51932E281E92509B00067553 /* SettingsViewController.swift */,
+				51932E2A1E92515100067553 /* BackupViewController.swift */,
 			);
 			name = controller;
 			sourceTree = "<group>";
@@ -139,7 +151,7 @@
 			isa = PBXGroup;
 			children = (
 				519E3ABE1E8D201B003FEC7E /* BookViewCell.swift */,
-				51389AE11E8E6A6800294FE7 /* ReadingBookCell.swift */,
+				51F52E241E913ECC009D4318 /* EmptyCell.swift */,
 			);
 			name = view;
 			sourceTree = "<group>";
@@ -314,12 +326,16 @@
 				5119828F1E87F944008F422A /* ReadingBookViewController.swift in Sources */,
 				51F180581E8D2C1E00626338 /* AddBookViewController.swift in Sources */,
 				511982A71E881AF4008F422A /* Book.swift in Sources */,
+				51932E291E92509B00067553 /* SettingsViewController.swift in Sources */,
+				51932E2B1E92515100067553 /* BackupViewController.swift in Sources */,
+				51932E231E9155DA00067553 /* MoreViewController.swift in Sources */,
 				519E3ABF1E8D201B003FEC7E /* BookViewCell.swift in Sources */,
 				511982A11E87FC73008F422A /* ReadViewController.swift in Sources */,
 				5119828D1E87F944008F422A /* AppDelegate.swift in Sources */,
 				511982A31E87FC91008F422A /* WillViewController.swift in Sources */,
-				51389AE21E8E6A6800294FE7 /* ReadingBookCell.swift in Sources */,
+				51F52E251E913ECC009D4318 /* EmptyCell.swift in Sources */,
 				51389AE51E8E87C900294FE7 /* DBManager.swift in Sources */,
+				51932E271E921ACC00067553 /* AboutViewController.swift in Sources */,
 				51F180551E8D22E600626338 /* Constants.swift in Sources */,
 				5174E0111E8DFFAC000E80F5 /* SQLiteConnect.swift in Sources */,
 				51389ADC1E8E560F00294FE7 /* HttpManager.swift in Sources */,
