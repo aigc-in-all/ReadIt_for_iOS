@@ -37,9 +37,10 @@ class DBManager {
                 "translator text",
                 "image text",
                 "publisher text",
-                "authorIntro text",
+                "author_intro text",
                 "summary text",
-                "createdTime text"])
+                "created_time text",
+                "read_pages text"])
         }
     }
     
@@ -59,6 +60,7 @@ class DBManager {
 //                let authorIntro = sqlite3_column_text(statement, 9)
                 let summary = sqlite3_column_text(statement, 10)
                 let createdTime = sqlite3_column_text(statement, 11)
+                let readPages = sqlite3_column_text(statement, 12)
                 
                 let book = Book()
                 book.isbn = String(cString: isbn!)
@@ -73,6 +75,7 @@ class DBManager {
                 book.summary = String(cString: summary!)
                 
                 book.createdTime = String(cString: createdTime!)
+                book.readPages = String(cString: readPages!)
                 
                 books.append(book)
             }
@@ -95,7 +98,8 @@ class DBManager {
                                 "publisher": "'\(book.publisher!)'",
 //                                "authorIntro": "'\(book.authorIntro!)'",
                                 "summary": "'\(book.summary!)'",
-                                "createdTime": "'\(book.createdTime!)'"
+                                "createdTime": "'\(book.createdTime!)'",
+                                "readPages":"'\(book.readPages!)'"
                                 ]
                             )
             // 如果 authorIntro 和 summary 同时插入会失败，暂不清楚原因！！！

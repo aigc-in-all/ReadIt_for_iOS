@@ -104,6 +104,7 @@ class AddBookViewController: UIViewController {
         }
         
         newBook?.createdTime = "\(Int64(Date().timeIntervalSince1970 * 1000))"
+        newBook?.readPages = "0"
         
         if DBManager.sharedInstance.insertBook(book: newBook!) {
             // success
@@ -137,7 +138,7 @@ class AddBookViewController: UIViewController {
             
             let isbn = book.isbn ?? ""
             let title = book.title ?? ""
-            let pages = book.pages ?? ""
+            let pages = book.pages ?? "0"
             let author = book.author ?? [""]
             let pubdate = book.pubdate ?? ""
             let translator = book.translator ?? [""]

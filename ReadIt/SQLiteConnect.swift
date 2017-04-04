@@ -28,13 +28,18 @@ class SQLiteConnect {
     }
     
     @discardableResult func createTable(tableName: String, columnsInfo: [String]) -> Bool {
-        let sql = "CREATE TABLE IF NOT EXISTS \(tableName) (\(columnsInfo.joined(separator: ", ")))"
+        let sql = "CREATE TABLE IF NOT EXISTS \(tableName) (\(columnsInfo.joined(separator: ",")))"
         
         print("\(sql)")
         
-        if sqlite3_exec(self.db, sql.cString(using: .utf8), nil, nil, nil) == SQLITE_OK {
+        let resultCode = sqlite3_exec(self.db, sql.cString(using: .utf8), nil, nil, nil)
+        if resultCode == SQLITE_OK {
+            debugPrint("创建 \(tableName) 表成功")
             return true
         }
+        
+        let errmsg = String.init(cString: sqlite3_errmsg(self.db))
+        debugPrint("创建 \(tableName) 表失败, resultCode=\(resultCode), errmsg=\(errmsg)")
         
         return false
     }

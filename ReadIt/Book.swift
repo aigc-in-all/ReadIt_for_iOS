@@ -22,15 +22,16 @@ class Book: Mappable {
     var isbn: String?           // ISBN
     var title: String?          // 书名
     var pages: String?             // 页数
-    var author: [String]?         // 作者
+    var author: [String]?       // 作者
     var pubdate: String?        // 发布时间
-    var translator: [String]?     // 译者
+    var translator: [String]?   // 译者
     var image: String?          // 封面图片
     var publisher: String?      // 出版社
     var authorIntro: String?    // 作者介绍
     var summary: String?        // 简介
     
-    var createdTime: String?     // 添加时间
+    var createdTime: String?    // 添加时间
+    var readPages: String?         // 已读页数
     
     init() {
     }
@@ -52,6 +53,7 @@ class Book: Mappable {
         summary     <- map["summary"]
         
         createdTime <- map["createdTime"]
+        readPages   <- map["readPages"]
     }
 
 }
