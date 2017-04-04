@@ -26,6 +26,10 @@
 		51932E2B1E92515100067553 /* BackupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51932E2A1E92515100067553 /* BackupViewController.swift */; };
 		519E3AB71E8D1868003FEC7E /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 519E3AB61E8D1868003FEC7E /* DetailViewController.swift */; };
 		519E3ABF1E8D201B003FEC7E /* BookViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 519E3ABE1E8D201B003FEC7E /* BookViewCell.swift */; };
+		51A0A8F91E93AB4600C77D51 /* SQLiteManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51A0A8F81E93AB4600C77D51 /* SQLiteManager.swift */; };
+		51A0A8FB1E93B52300C77D51 /* BaseDao.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51A0A8FA1E93B52300C77D51 /* BaseDao.swift */; };
+		51A0A8FD1E93B53900C77D51 /* BookDao.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51A0A8FC1E93B53900C77D51 /* BookDao.swift */; };
+		51A0A8FF1E93EBA800C77D51 /* BookModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51A0A8FE1E93EBA800C77D51 /* BookModel.swift */; };
 		51F180531E8D227000626338 /* UIColorExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51F180521E8D227000626338 /* UIColorExtensions.swift */; };
 		51F180551E8D22E600626338 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51F180541E8D22E600626338 /* Constants.swift */; };
 		51F180581E8D2C1E00626338 /* AddBookViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51F180571E8D2C1E00626338 /* AddBookViewController.swift */; };
@@ -54,6 +58,10 @@
 		51932E2A1E92515100067553 /* BackupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BackupViewController.swift; sourceTree = "<group>"; };
 		519E3AB61E8D1868003FEC7E /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		519E3ABE1E8D201B003FEC7E /* BookViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookViewCell.swift; sourceTree = "<group>"; };
+		51A0A8F81E93AB4600C77D51 /* SQLiteManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SQLiteManager.swift; sourceTree = "<group>"; };
+		51A0A8FA1E93B52300C77D51 /* BaseDao.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseDao.swift; sourceTree = "<group>"; };
+		51A0A8FC1E93B53900C77D51 /* BookDao.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookDao.swift; sourceTree = "<group>"; };
+		51A0A8FE1E93EBA800C77D51 /* BookModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookModel.swift; sourceTree = "<group>"; };
 		51F180521E8D227000626338 /* UIColorExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColorExtensions.swift; sourceTree = "<group>"; };
 		51F180541E8D22E600626338 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		51F180571E8D2C1E00626338 /* AddBookViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddBookViewController.swift; sourceTree = "<group>"; };
@@ -126,6 +134,9 @@
 			children = (
 				5174E0101E8DFFAC000E80F5 /* SQLiteConnect.swift */,
 				51389AE41E8E87C900294FE7 /* DBManager.swift */,
+				51A0A8F81E93AB4600C77D51 /* SQLiteManager.swift */,
+				51A0A8FA1E93B52300C77D51 /* BaseDao.swift */,
+				51A0A8FC1E93B53900C77D51 /* BookDao.swift */,
 			);
 			name = database;
 			sourceTree = "<group>";
@@ -168,6 +179,7 @@
 			isa = PBXGroup;
 			children = (
 				511982A61E881AF4008F422A /* Book.swift */,
+				51A0A8FE1E93EBA800C77D51 /* BookModel.swift */,
 			);
 			name = model;
 			sourceTree = "<group>";
@@ -328,13 +340,17 @@
 				511982A71E881AF4008F422A /* Book.swift in Sources */,
 				51932E291E92509B00067553 /* SettingsViewController.swift in Sources */,
 				51932E2B1E92515100067553 /* BackupViewController.swift in Sources */,
+				51A0A8F91E93AB4600C77D51 /* SQLiteManager.swift in Sources */,
 				51932E231E9155DA00067553 /* MoreViewController.swift in Sources */,
 				519E3ABF1E8D201B003FEC7E /* BookViewCell.swift in Sources */,
+				51A0A8FB1E93B52300C77D51 /* BaseDao.swift in Sources */,
 				511982A11E87FC73008F422A /* ReadViewController.swift in Sources */,
 				5119828D1E87F944008F422A /* AppDelegate.swift in Sources */,
+				51A0A8FD1E93B53900C77D51 /* BookDao.swift in Sources */,
 				511982A31E87FC91008F422A /* WillViewController.swift in Sources */,
 				51F52E251E913ECC009D4318 /* EmptyCell.swift in Sources */,
 				51389AE51E8E87C900294FE7 /* DBManager.swift in Sources */,
+				51A0A8FF1E93EBA800C77D51 /* BookModel.swift in Sources */,
 				51932E271E921ACC00067553 /* AboutViewController.swift in Sources */,
 				51F180551E8D22E600626338 /* Constants.swift in Sources */,
 				5174E0111E8DFFAC000E80F5 /* SQLiteConnect.swift in Sources */,

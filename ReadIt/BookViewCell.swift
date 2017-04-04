@@ -28,6 +28,18 @@ class BookViewCell: UICollectionViewCell {
             if let author = book?.author {
                 authorLabel.text = author.joined(separator: ",")
             }
+            
+            if let pageCount = book?.pages, let readPages = book?.readPages {
+                let progress = Float(readPages)! / Float(pageCount)!
+                progressBar.progress = progress
+                if UserDefaults.standard.bool(forKey: SettingsViewController.KEY_SHOW_PROGRESS_BY_PERCENTAGE) {
+                    // 百分比
+                    progressLabel.text = "\(String(format: "%.0f", progress * 100))%"
+                } else {
+                    // 页数
+                    progressLabel.text = "\(readPages)/\(pageCount)"
+                }
+            }
         }
     }
     

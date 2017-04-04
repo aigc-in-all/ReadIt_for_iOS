@@ -18,7 +18,7 @@ class ReadingBookViewController: UIViewController, UICollectionViewDataSource, U
     var books = [Book]()
     
     var collectionView: UICollectionView?
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationItem.title = "在读"
@@ -39,7 +39,21 @@ class ReadingBookViewController: UIViewController, UICollectionViewDataSource, U
         
         self.view.addSubview(collectionView!)
         
-        books.append(contentsOf: DBManager.sharedInstance.queryAll())
+        UserDefaults.standard.addObserver(self, forKeyPath: SettingsViewController.KEY_SHOW_PROGRESS_BY_PERCENTAGE, options: .new, context: nil)
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        books.removeAll()
+        books.append(contentsOf: BookModel.instance.queryAllByReading())
+        collectionView?.reloadData()
+    }
+    
+    deinit {
+        UserDefaults.standard.removeObserver(self, forKeyPath: SettingsViewController.KEY_SHOW_PROGRESS_BY_PERCENTAGE, context: nil)
+    }
+    
+    override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
+        collectionView?.reloadData()
     }
     
     // MARK: - UICollectionViewDataSource
@@ -63,7 +77,7 @@ class ReadingBookViewController: UIViewController, UICollectionViewDataSource, U
     // MARK: - UICollectionViewDelegate
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let detailViewController = DetailViewController()
-        detailViewController.book = books[indexPath.item]
+        detailViewController.isbn = books[indexPath.item].isbn
         detailViewController.hidesBottomBarWhenPushed = true
         self.navigationController?.pushViewController(detailViewController, animated: true)
     }
@@ -72,11 +86,11 @@ class ReadingBookViewController: UIViewController, UICollectionViewDataSource, U
     
     func onAddButtonClicked() {
         let addBookViewController = AddBookViewController()
-        addBookViewController.callback = { book in
-            self.books.append(book)
-            let indexPath = IndexPath(item: self.books.count - 1, section: 0)
-            self.collectionView?.insertItems(at: [indexPath])
-        }
+//        addBookViewController.callback = { book in
+//            self.books.append(book)
+//            let indexPath = IndexPath(item: self.books.count - 1, section: 0)
+//            self.collectionView?.insertItems(at: [indexPath])
+//        }
         let navController = UINavigationController(rootViewController: addBookViewController)
         present(navController, animated: true, completion: nil)
     }

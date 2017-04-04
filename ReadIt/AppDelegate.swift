@@ -19,7 +19,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window?.rootViewController = MainViewController()
         window?.makeKeyAndVisible()
         
-        DBManager.sharedInstance.open()
+//        DBManager.sharedInstance.open()
+        let result = SQLiteManager.sharedInstance().openDB()
+        print("打开数据库：\(result)")
         
         return true
     }

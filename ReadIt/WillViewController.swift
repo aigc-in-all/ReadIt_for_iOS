@@ -13,47 +13,69 @@ class WillViewController: UIViewController, UICollectionViewDataSource, UICollec
     let cellIdForContent = "content"
     let cellIdForPlaceholder = "placeholder"
     
-    var bookCellWidth: CGFloat = 0
-    var bookCellHeight: CGFloat = 0
+    var collectionView: UICollectionView?
+    
+    var books = [Book]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "想读"
         self.view.backgroundColor = Constants.bgColor
         
-        bookCellWidth = (self.view.bounds.width - 12 - 12 - 12 - 12) / 3
-        bookCellHeight = bookCellWidth / 0.669 + 20 // 20 表示底部显示标题的高度
-        
         let layout = UICollectionViewFlowLayout()
-        let collectionView = UICollectionView(frame: self.view.bounds, collectionViewLayout: layout)
-        collectionView.dataSource = self
-        collectionView.delegate = self
-        collectionView.alwaysBounceVertical = true
-        collectionView.contentInset = UIEdgeInsets(top: 12, left: 12, bottom: 12, right: 12)
-        collectionView.backgroundColor = Constants.bgColor
-        collectionView.register(BookViewCell.self, forCellWithReuseIdentifier: cellIdForContent)
-        collectionView.register(EmptyCell.self, forCellWithReuseIdentifier: cellIdForPlaceholder)
+        layout.minimumInteritemSpacing = 0
+        layout.minimumLineSpacing = 0
+        collectionView = UICollectionView(frame: self.view.bounds, collectionViewLayout: layout)
+        collectionView?.dataSource = self
+        collectionView?.delegate = self
+        collectionView?.alwaysBounceVertical = true
+        collectionView?.backgroundColor = Constants.bgColor
+        collectionView?.register(BookViewCell.self, forCellWithReuseIdentifier: cellIdForContent)
+        collectionView?.register(EmptyCell.self, forCellWithReuseIdentifier: cellIdForPlaceholder)
         
-        self.view.addSubview(collectionView)
+        self.view.addSubview(collectionView!)
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        books.removeAll()
+        books.append(contentsOf: BookModel.instance.queryAllByWant())
+        collectionView?.reloadData()
     }
     
     // MARK: - UICollectionViewDataSource
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 1
+        if books.isEmpty {
+            return 1
+        } else {
+            return books.count
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellIdForPlaceholder, for: indexPath) as! EmptyCell
-        cell.emptyText = "最近一本书都不想读吗？亲，阅读贵在坚持，如果你改变了主意，请点击右下角的按钮添加书籍。"
+        if books.isEmpty {
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellIdForPlaceholder, for: indexPath) as! EmptyCell
+            cell.emptyText = "最近一本书都不想读吗？亲，阅读贵在坚持，如果你改变了主意，请点击右下角的按钮添加书籍。"
+            return cell
+        }
+        
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellIdForContent, for: indexPath) as! BookViewCell
+        cell.book = books[indexPath.item]
         return cell
     }
     
     // MARK: - UICollectionViewDelegateFlowLayout
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        //        return CGSize(width: bookCellWidth, height: bookCellHeight)
-        return CGSize(width: self.view.bounds.width, height: bookCellHeight)
+        return CGSize(width: self.view.bounds.width, height: 80)
+    }
+    
+    // MARK: - UICollectionViewDelegate
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let detailViewController = DetailViewController()
+        detailViewController.isbn = books[indexPath.item].isbn
+        detailViewController.hidesBottomBarWhenPushed = true
+        self.navigationController?.pushViewController(detailViewController, animated: true)
     }
 
 }

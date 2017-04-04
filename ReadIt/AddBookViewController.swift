@@ -24,7 +24,7 @@ class AddBookViewController: UIViewController {
         box.keyboardType = .numberPad
         box.addTarget(self, action: #selector(textFieldDidChanged), for: .editingChanged)
         box.placeholder = "请输入ISBN获取书籍信息"
-        box.text = "9787508672069"
+        box.text = "9787539971810"
         return box
     }()
     
@@ -103,10 +103,17 @@ class AddBookViewController: UIViewController {
             return
         }
         
+        if BookModel.instance.bookExist(isbn: (newBook?.isbn!)!) {
+            let alert = UIAlertController(title: nil, message: "这本书已经添加过了~", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "我知道了", style: .default, handler: nil))
+            self.present(alert, animated: true, completion: nil)
+            return
+        }
+        
         newBook?.createdTime = "\(Int64(Date().timeIntervalSince1970 * 1000))"
         newBook?.readPages = "0"
         
-        if DBManager.sharedInstance.insertBook(book: newBook!) {
+        if BookModel.instance.add(book: newBook!) {
             // success
             self.dismiss(animated: true, completion: nil)
             if callback != nil {
