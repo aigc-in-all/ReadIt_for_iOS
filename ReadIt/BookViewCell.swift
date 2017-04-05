@@ -51,15 +51,6 @@ class BookViewCell: UICollectionViewCell {
         return imageView
     }()
     
-    let authorLabel: UILabel = {
-        let label = UILabel()
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = "作者"
-        label.font = UIFont.boldSystemFont(ofSize: 12)
-        label.textAlignment = .left
-        return label
-    }()
-    
     let bookTitleLabel: UILabel = {
         let label = UILabel()
         label.text = "百年孤独"
@@ -69,11 +60,22 @@ class BookViewCell: UICollectionViewCell {
         return label
     }()
     
+    let authorLabel: UILabel = {
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.text = "作者"
+        label.font = UIFont.systemFont(ofSize: 12)
+        label.textAlignment = .left
+        return label
+    }()
+    
     let progressBar: UIProgressView = {
         let bar = UIProgressView(progressViewStyle: .bar)
         bar.progress = 0.7
-        bar.trackTintColor = .gray
-        bar.progressTintColor = .green
+        bar.layer.cornerRadius = 1
+        bar.layer.masksToBounds = true
+        bar.trackTintColor = UIColor.rgb(red: 247, green: 247, blue: 247)
+        bar.progressTintColor = UIColor.readingProgress
         bar.translatesAutoresizingMaskIntoConstraints = false
         return bar
     }()

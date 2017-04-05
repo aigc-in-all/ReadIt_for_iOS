@@ -19,6 +19,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window?.rootViewController = MainViewController()
         window?.makeKeyAndVisible()
         
+        UINavigationBar.appearance().barTintColor = UIColor.primary
+        UINavigationBar.appearance().tintColor = UIColor.white
+        UINavigationBar.appearance().titleTextAttributes = [NSForegroundColorAttributeName: UIColor.white]
+        
+        UITabBar.appearance().tintColor = UIColor.primary
+        
 //        DBManager.sharedInstance.open()
         let result = SQLiteManager.sharedInstance().openDB()
         print("打开数据库：\(result)")
