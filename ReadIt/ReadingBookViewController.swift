@@ -95,6 +95,7 @@ class ReadingBookViewController: UIViewController, UICollectionViewDataSource, U
 //        present(navController, animated: true, completion: nil)
         
         let searchController = SearchTableViewController(style: .plain)
-        self.navigationController?.pushViewController(searchController, animated: true)
+        let navController = UINavigationController(rootViewController: searchController)
+        present(navController, animated: true, completion: nil)
     }
 }
