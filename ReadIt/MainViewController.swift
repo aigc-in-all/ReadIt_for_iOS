@@ -44,7 +44,8 @@ class MainViewController: UITabBarController {
     }
     
     let addView: UIButton = {
-        let button = UIButton(type: UIButtonType.contactAdd)
+        let button = UIButton(type: UIButtonType.custom)
+        button.setImage(UIImage(named: "ic_add_circle"), for: UIControlState.normal)
         button.translatesAutoresizingMaskIntoConstraints = false
         button.addTarget(self, action: #selector(onAddButtonClicked), for: .touchUpInside)
         return button
@@ -62,13 +63,8 @@ class MainViewController: UITabBarController {
     }
     
     func onAddButtonClicked() {
-        let addBookViewController = AddBookViewController()
-//        addBookViewController.callback = { book in
-//            self.books.append(book)
-//            let indexPath = IndexPath(item: self.books.count - 1, section: 0)
-//            self.collectionView?.insertItems(at: [indexPath])
-//        }
-        let navController = UINavigationController(rootViewController: addBookViewController)
+        let searchViewController = SearchViewController(style: .plain)
+        let navController = UINavigationController(rootViewController: searchViewController)
         present(navController, animated: true, completion: nil)
     }
 }

@@ -24,8 +24,6 @@ class ReadingBookViewController: UIViewController, UICollectionViewDataSource, U
         self.navigationItem.title = "在读"
         self.view.backgroundColor = UIColor.bgColor
         
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.add, target: self, action: #selector(onAddButtonClicked))
-        
         let collectionViewLayout = UICollectionViewFlowLayout()
         collectionViewLayout.minimumInteritemSpacing = 0
         collectionViewLayout.minimumLineSpacing = 0
@@ -80,22 +78,5 @@ class ReadingBookViewController: UIViewController, UICollectionViewDataSource, U
         detailViewController.isbn = books[indexPath.item].isbn
         detailViewController.hidesBottomBarWhenPushed = true
         self.navigationController?.pushViewController(detailViewController, animated: true)
-    }
-    
-    // MARK: - Custom acitons
-    
-    func onAddButtonClicked() {
-//        let addBookViewController = AddBookViewController()
-////        addBookViewController.callback = { book in
-////            self.books.append(book)
-////            let indexPath = IndexPath(item: self.books.count - 1, section: 0)
-////            self.collectionView?.insertItems(at: [indexPath])
-////        }
-//        let navController = UINavigationController(rootViewController: addBookViewController)
-//        present(navController, animated: true, completion: nil)
-        
-        let searchController = SearchTableViewController(style: .plain)
-        let navController = UINavigationController(rootViewController: searchController)
-        present(navController, animated: true, completion: nil)
     }
 }

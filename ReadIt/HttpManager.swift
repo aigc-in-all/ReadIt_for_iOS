@@ -15,7 +15,7 @@ class HttpManager {
         return manager
     }()
     
-    func postRequest(urlString: String, params: [String: AnyObject], success: @escaping ([String: AnyObject]) -> Void, failure: @escaping (NSError) -> Void) {
+    func postRequest(urlString: String, params: [String: Any], success: @escaping ([String: AnyObject]) -> Void, failure: @escaping (NSError) -> Void) {
         Alamofire.request(urlString, method: .post, parameters: params).responseJSON { (response) in
             switch response.result {
             case .success(let value):
@@ -28,7 +28,7 @@ class HttpManager {
         }
     }
     
-    func getRequest(urlString: String, params: [String: AnyObject]?, success: @escaping ([String: AnyObject]) -> Void, failure: @escaping (NSError) -> Void) {
+    func getRequest(urlString: String, params: [String: Any]?, success: @escaping ([String: AnyObject]) -> Void, failure: @escaping (NSError) -> Void) {
         Alamofire.request(urlString, method: .get, parameters: params).responseJSON { (response) in
             switch response.result {
             case .success(let value):
@@ -38,6 +38,14 @@ class HttpManager {
             case .failure(let error):
                 failure(error as NSError)
             }
+        }
+    }
+    
+    func cancelAll() {
+        Alamofire.SessionManager.default.session.getAllTasks { (tasks) in
+            tasks.forEach({ (task) in
+                task.cancel()
+            })
         }
     }
 }

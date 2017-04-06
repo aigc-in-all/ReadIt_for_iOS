@@ -37,7 +37,7 @@ class BaseDao {
         let sql = "INSERT INTO \(tableName) "
                     + "(\(rowInfo.keys.joined(separator: ", ")))"
                     + " VALUES "
-                    + "('\(rowInfo.values.joined(separator: "', '"))')"
+                    + "(\"\(rowInfo.values.joined(separator: "\", \""))\")"
         let resultCode = sqlite3_prepare_v2(self.db, sql, -1, &stmt, nil)
         if resultCode == SQLITE_OK {
             if sqlite3_step(stmt) == SQLITE_DONE {
@@ -77,7 +77,7 @@ class BaseDao {
         // row info
         var info = [String]()
         for (k, v) in rowInfo {
-            info.append("\(k) = '\(v)'")
+            info.append("\(k) = \"\(v)\"")
         }
         sql += info.joined(separator: ", ")
         
