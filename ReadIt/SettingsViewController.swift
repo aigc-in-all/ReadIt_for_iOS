@@ -57,7 +57,7 @@ class SettingsViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "设置"
-        self.view.backgroundColor = Constants.bgColor
+        self.view.backgroundColor = UIColor.bgColor
     }
     
     // MARK: - UITableViewDataSource

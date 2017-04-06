@@ -92,7 +92,7 @@ class BookViewCell: UICollectionViewCell {
     let dividerView: UIView = {
         let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
-        view.backgroundColor = Constants.dividerColor
+        view.backgroundColor = UIColor.dividerColor
         return view
     }()
     

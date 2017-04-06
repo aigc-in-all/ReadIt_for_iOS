@@ -18,6 +18,7 @@
 		511982A71E881AF4008F422A /* Book.swift in Sources */ = {isa = PBXBuildFile; fileRef = 511982A61E881AF4008F422A /* Book.swift */; };
 		51389ADC1E8E560F00294FE7 /* HttpManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51389ADB1E8E560F00294FE7 /* HttpManager.swift */; };
 		51389AE51E8E87C900294FE7 /* DBManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51389AE41E8E87C900294FE7 /* DBManager.swift */; };
+		5169F4581E966E8B006EC328 /* SearchTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5169F4571E966E8B006EC328 /* SearchTableViewController.swift */; };
 		5174E00F1E8DFECC000E80F5 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 5174E00E1E8DFECC000E80F5 /* libsqlite3.tbd */; };
 		5174E0111E8DFFAC000E80F5 /* SQLiteConnect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5174E0101E8DFFAC000E80F5 /* SQLiteConnect.swift */; };
 		51932E231E9155DA00067553 /* MoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51932E221E9155DA00067553 /* MoreViewController.swift */; };
@@ -31,7 +32,6 @@
 		51A0A8FD1E93B53900C77D51 /* BookDao.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51A0A8FC1E93B53900C77D51 /* BookDao.swift */; };
 		51A0A8FF1E93EBA800C77D51 /* BookModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51A0A8FE1E93EBA800C77D51 /* BookModel.swift */; };
 		51F180531E8D227000626338 /* UIColorExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51F180521E8D227000626338 /* UIColorExtensions.swift */; };
-		51F180551E8D22E600626338 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51F180541E8D22E600626338 /* Constants.swift */; };
 		51F180581E8D2C1E00626338 /* AddBookViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51F180571E8D2C1E00626338 /* AddBookViewController.swift */; };
 		51F52E251E913ECC009D4318 /* EmptyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51F52E241E913ECC009D4318 /* EmptyCell.swift */; };
 /* End PBXBuildFile section */
@@ -49,6 +49,7 @@
 		511982A61E881AF4008F422A /* Book.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Book.swift; sourceTree = "<group>"; };
 		51389ADB1E8E560F00294FE7 /* HttpManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HttpManager.swift; sourceTree = "<group>"; };
 		51389AE41E8E87C900294FE7 /* DBManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DBManager.swift; sourceTree = "<group>"; };
+		5169F4571E966E8B006EC328 /* SearchTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchTableViewController.swift; sourceTree = "<group>"; };
 		5174E00D1E8DFEB2000E80F5 /* ReadIt-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ReadIt-Bridging-Header.h"; sourceTree = "<group>"; };
 		5174E00E1E8DFECC000E80F5 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
 		5174E0101E8DFFAC000E80F5 /* SQLiteConnect.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SQLiteConnect.swift; sourceTree = "<group>"; };
@@ -63,7 +64,6 @@
 		51A0A8FC1E93B53900C77D51 /* BookDao.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookDao.swift; sourceTree = "<group>"; };
 		51A0A8FE1E93EBA800C77D51 /* BookModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookModel.swift; sourceTree = "<group>"; };
 		51F180521E8D227000626338 /* UIColorExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColorExtensions.swift; sourceTree = "<group>"; };
-		51F180541E8D22E600626338 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		51F180571E8D2C1E00626338 /* AddBookViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddBookViewController.swift; sourceTree = "<group>"; };
 		51F52E241E913ECC009D4318 /* EmptyCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmptyCell.swift; sourceTree = "<group>"; };
 		9DF659D3E8222956651DC496 /* Pods-ReadIt.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReadIt.release.xcconfig"; path = "Pods/Target Support Files/Pods-ReadIt/Pods-ReadIt.release.xcconfig"; sourceTree = "<group>"; };
@@ -154,6 +154,7 @@
 				51932E261E921ACC00067553 /* AboutViewController.swift */,
 				51932E281E92509B00067553 /* SettingsViewController.swift */,
 				51932E2A1E92515100067553 /* BackupViewController.swift */,
+				5169F4571E966E8B006EC328 /* SearchTableViewController.swift */,
 			);
 			name = controller;
 			sourceTree = "<group>";
@@ -188,7 +189,6 @@
 			isa = PBXGroup;
 			children = (
 				51F180521E8D227000626338 /* UIColorExtensions.swift */,
-				51F180541E8D22E600626338 /* Constants.swift */,
 			);
 			name = common;
 			sourceTree = "<group>";
@@ -340,6 +340,7 @@
 				511982A71E881AF4008F422A /* Book.swift in Sources */,
 				51932E291E92509B00067553 /* SettingsViewController.swift in Sources */,
 				51932E2B1E92515100067553 /* BackupViewController.swift in Sources */,
+				5169F4581E966E8B006EC328 /* SearchTableViewController.swift in Sources */,
 				51A0A8F91E93AB4600C77D51 /* SQLiteManager.swift in Sources */,
 				51932E231E9155DA00067553 /* MoreViewController.swift in Sources */,
 				519E3ABF1E8D201B003FEC7E /* BookViewCell.swift in Sources */,
@@ -352,7 +353,6 @@
 				51389AE51E8E87C900294FE7 /* DBManager.swift in Sources */,
 				51A0A8FF1E93EBA800C77D51 /* BookModel.swift in Sources */,
 				51932E271E921ACC00067553 /* AboutViewController.swift in Sources */,
-				51F180551E8D22E600626338 /* Constants.swift in Sources */,
 				5174E0111E8DFFAC000E80F5 /* SQLiteConnect.swift in Sources */,
 				51389ADC1E8E560F00294FE7 /* HttpManager.swift in Sources */,
 				519E3AB71E8D1868003FEC7E /* DetailViewController.swift in Sources */,

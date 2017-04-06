@@ -22,7 +22,7 @@ class ReadingBookViewController: UIViewController, UICollectionViewDataSource, U
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationItem.title = "在读"
-        self.view.backgroundColor = Constants.bgColor
+        self.view.backgroundColor = UIColor.bgColor
         
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.add, target: self, action: #selector(onAddButtonClicked))
         
@@ -85,13 +85,16 @@ class ReadingBookViewController: UIViewController, UICollectionViewDataSource, U
     // MARK: - Custom acitons
     
     func onAddButtonClicked() {
-        let addBookViewController = AddBookViewController()
-//        addBookViewController.callback = { book in
-//            self.books.append(book)
-//            let indexPath = IndexPath(item: self.books.count - 1, section: 0)
-//            self.collectionView?.insertItems(at: [indexPath])
-//        }
-        let navController = UINavigationController(rootViewController: addBookViewController)
-        present(navController, animated: true, completion: nil)
+//        let addBookViewController = AddBookViewController()
+////        addBookViewController.callback = { book in
+////            self.books.append(book)
+////            let indexPath = IndexPath(item: self.books.count - 1, section: 0)
+////            self.collectionView?.insertItems(at: [indexPath])
+////        }
+//        let navController = UINavigationController(rootViewController: addBookViewController)
+//        present(navController, animated: true, completion: nil)
+        
+        let searchController = SearchTableViewController(style: .plain)
+        self.navigationController?.pushViewController(searchController, animated: true)
     }
 }

@@ -13,9 +13,7 @@ class BackupViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "备份与恢复"
-        self.view.backgroundColor = Constants.bgColor
-
-        // Do any additional setup after loading the view.
+        self.view.backgroundColor = UIColor.bgColor
     }
 
 }

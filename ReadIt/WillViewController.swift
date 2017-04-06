@@ -20,7 +20,7 @@ class WillViewController: UIViewController, UICollectionViewDataSource, UICollec
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "想读"
-        self.view.backgroundColor = Constants.bgColor
+        self.view.backgroundColor = UIColor.bgColor
         
         let layout = UICollectionViewFlowLayout()
         layout.minimumInteritemSpacing = 0
@@ -29,7 +29,7 @@ class WillViewController: UIViewController, UICollectionViewDataSource, UICollec
         collectionView?.dataSource = self
         collectionView?.delegate = self
         collectionView?.alwaysBounceVertical = true
-        collectionView?.backgroundColor = Constants.bgColor
+        collectionView?.backgroundColor = UIColor.bgColor
         collectionView?.register(BookViewCell.self, forCellWithReuseIdentifier: cellIdForContent)
         collectionView?.register(EmptyCell.self, forCellWithReuseIdentifier: cellIdForPlaceholder)
         

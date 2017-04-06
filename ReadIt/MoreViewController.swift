@@ -33,7 +33,7 @@ class MoreViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view.backgroundColor = Constants.bgColor
+        self.view.backgroundColor = UIColor.bgColor
         self.title = "更多"
     }
     

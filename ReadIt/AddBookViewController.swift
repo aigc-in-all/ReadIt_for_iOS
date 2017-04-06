@@ -64,7 +64,7 @@ class AddBookViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view.backgroundColor = Constants.bgColor
+        self.view.backgroundColor = UIColor.bgColor
         self.title = "添加书籍"
         
         self.navigationItem.leftBarButtonItem = UIBarButtonItem(title: "取消", style: .plain, target: self, action: #selector(onCancelButtonClicked))

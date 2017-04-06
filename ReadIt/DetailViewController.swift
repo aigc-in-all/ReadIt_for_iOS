@@ -32,7 +32,7 @@ class DetailViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view.backgroundColor = Constants.bgColor
+        self.view.backgroundColor = UIColor.bgColor
         
         book = BookModel.instance.query(isbn: isbn!)
         self.title = book?.title
