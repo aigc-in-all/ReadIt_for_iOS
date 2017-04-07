@@ -7,4 +7,5 @@ target 'ReadIt' do
     pod 'AlamofireImage', '~> 3.1'
     pod 'SwiftyJSON', '~> 3.1.4'
     pod 'ObjectMapper', '~> 2.2'
+    pod 'Toast-Swift', '~> 2.0.0'
 end
