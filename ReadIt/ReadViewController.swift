@@ -19,6 +19,7 @@ class ReadViewController: UITableViewController {
         self.title = "已读"
         self.view.backgroundColor = UIColor.bgColor
         
+        self.tableView.separatorColor = .clear
         self.tableView.register(NormalBookCell.self, forCellReuseIdentifier: cellIdForContent)
     }
     

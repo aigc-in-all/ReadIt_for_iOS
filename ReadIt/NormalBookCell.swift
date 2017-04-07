@@ -37,7 +37,7 @@ class NormalBookCell: UITableViewCell {
     
     let bookImageView: UIImageView = {
         let imageView = UIImageView()
-        imageView.layer.cornerRadius = 4
+        imageView.layer.cornerRadius = 2
         imageView.layer.masksToBounds = true
         imageView.translatesAutoresizingMaskIntoConstraints = false
         return imageView

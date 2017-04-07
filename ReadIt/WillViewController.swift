@@ -19,6 +19,7 @@ class WillViewController: UITableViewController {
         self.title = "想读"
         self.view.backgroundColor = UIColor.bgColor
         
+        self.tableView.separatorColor = .clear
         self.tableView.register(NormalBookCell.self, forCellReuseIdentifier: cellIdForContent)
     }
     
