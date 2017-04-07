@@ -125,10 +125,10 @@ class BookDao: BaseDao {
         rowInfo["created_time"] = book.createdTime
         rowInfo["read_pages"] = book.readPages
         
-        return super.update(tableName: tableName, cond: "isbn = \(book.isbn!)", rowInfo: rowInfo)
+        return super.update(tableName: tableName, cond: "isbn = \"\(book.isbn!)\"", rowInfo: rowInfo)
     }
     
     func deleteBy(isbn: String) -> Bool {
-        return delete(tableName: tableName, cond: "isbn = '\(isbn)'")
+        return delete(tableName: tableName, cond: "isbn = \"\(isbn)\"")
     }
 }

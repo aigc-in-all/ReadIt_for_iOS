@@ -8,6 +8,7 @@
 
 import UIKit
 import ObjectMapper
+import Toast_Swift
 
 class SearchViewController: UITableViewController {
 
@@ -35,7 +36,7 @@ class SearchViewController: UITableViewController {
         searchController.searchBar.setValue("取消", forKey: "_cancelButtonText")
         
         self.tableView.tableHeaderView = searchController.searchBar
-        self.tableView.register(BookCell.self, forCellReuseIdentifier: "cell")
+        self.tableView.register(NormalBookCell.self, forCellReuseIdentifier: "cell")
         
         self.definesPresentationContext = true
     }
@@ -47,18 +48,16 @@ class SearchViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-        
-        let book = books[indexPath.item]
-        cell.textLabel?.text = book.title
-        cell.detailTextLabel?.text = book.author?.joined(separator: ",")
-        
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! NormalBookCell
+        cell.book = books[indexPath.item]
         return cell
     }
     
     // MARK: - UITableViewDelegate
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        
         let selectedBook = books[indexPath.item]
         
         if BookModel.instance.bookExist(isbn: selectedBook.isbn!) {
@@ -72,11 +71,15 @@ class SearchViewController: UITableViewController {
         selectedBook.readPages = "0"
         
         guard BookDao.instance.insertBook(book: selectedBook) else {
-            print("添加失败")
+            self.view.makeToast("添加失败，请重试")
             return
         }
         
         self.presentingViewController?.dismiss(animated: true, completion: nil)
+    }
+    
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 80
     }
     
     // MARK: - ViewController
@@ -120,16 +123,5 @@ extension SearchViewController: UISearchResultsUpdating, UISearchBarDelegate {
         }) { (error) in
             print(error)
         }
-    }
-}
-
-class BookCell: UITableViewCell {
-    
-    override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
-        super.init(style: .subtitle, reuseIdentifier: reuseIdentifier)
-    }
-    
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
     }
 }

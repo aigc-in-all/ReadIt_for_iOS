@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Toast_Swift
 
 class DetailViewController: UIViewController {
 
@@ -85,14 +86,22 @@ class DetailViewController: UIViewController {
     // MARK: - test 
     func onBtn1Clicked() {
         book?.readPages = String(Int((book?.pages!)!)! / 2)
-        BookModel.instance.update(book: book!)
+        guard BookModel.instance.update(book: book!) else {
+            self.view.makeToast("操作失败，请重试")
+            return
+        }
+        
         self.navigationController?.popViewController(animated: true)
     }
     
     // 读完了
     func onBtn2Clicked() {
         book?.readPages = book?.pages
-        BookModel.instance.update(book: book!)
+        guard BookModel.instance.update(book: book!) else {
+            self.view.makeToast("操作失败，请重试")
+            return
+        }
+        
         self.navigationController?.popViewController(animated: true)
     }
 }
