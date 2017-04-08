@@ -19,6 +19,7 @@
 		5136B3DC1E97B60A0081903F /* NormalBookCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5136B3DB1E97B60A0081903F /* NormalBookCell.swift */; };
 		51389ADC1E8E560F00294FE7 /* HttpManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51389ADB1E8E560F00294FE7 /* HttpManager.swift */; };
 		51389AE51E8E87C900294FE7 /* DBManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51389AE41E8E87C900294FE7 /* DBManager.swift */; };
+		514B06951E98F8A000B4A918 /* UIImageViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 514B06941E98F8A000B4A918 /* UIImageViewExtensions.swift */; };
 		5169F4581E966E8B006EC328 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5169F4571E966E8B006EC328 /* SearchViewController.swift */; };
 		5174E00F1E8DFECC000E80F5 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 5174E00E1E8DFECC000E80F5 /* libsqlite3.tbd */; };
 		5174E0111E8DFFAC000E80F5 /* SQLiteConnect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5174E0101E8DFFAC000E80F5 /* SQLiteConnect.swift */; };
@@ -50,6 +51,7 @@
 		5136B3DB1E97B60A0081903F /* NormalBookCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NormalBookCell.swift; sourceTree = "<group>"; };
 		51389ADB1E8E560F00294FE7 /* HttpManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HttpManager.swift; sourceTree = "<group>"; };
 		51389AE41E8E87C900294FE7 /* DBManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DBManager.swift; sourceTree = "<group>"; };
+		514B06941E98F8A000B4A918 /* UIImageViewExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImageViewExtensions.swift; sourceTree = "<group>"; };
 		5169F4571E966E8B006EC328 /* SearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		5174E00D1E8DFEB2000E80F5 /* ReadIt-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ReadIt-Bridging-Header.h"; sourceTree = "<group>"; };
 		5174E00E1E8DFECC000E80F5 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
@@ -188,6 +190,7 @@
 		519E3AC01E8D21D1003FEC7E /* common */ = {
 			isa = PBXGroup;
 			children = (
+				514B06941E98F8A000B4A918 /* UIImageViewExtensions.swift */,
 				51F180521E8D227000626338 /* UIColorExtensions.swift */,
 			);
 			name = common;
@@ -343,6 +346,7 @@
 				51A0A8F91E93AB4600C77D51 /* SQLiteManager.swift in Sources */,
 				51932E231E9155DA00067553 /* MoreViewController.swift in Sources */,
 				519E3ABF1E8D201B003FEC7E /* BookViewCell.swift in Sources */,
+				514B06951E98F8A000B4A918 /* UIImageViewExtensions.swift in Sources */,
 				51A0A8FB1E93B52300C77D51 /* BaseDao.swift in Sources */,
 				511982A11E87FC73008F422A /* ReadViewController.swift in Sources */,
 				5119828D1E87F944008F422A /* AppDelegate.swift in Sources */,
